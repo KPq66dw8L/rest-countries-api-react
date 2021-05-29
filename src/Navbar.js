@@ -1,7 +1,12 @@
+import moonIconBlack from "./assets/icon-moon-black.svg"
+
 const Navbar = () => {
     return <div className='navbar'>
         <h1>Where in the world?</h1>
-        <button>Dark Mode</button>
+        <a href='#'>
+            <img src={moonIconBlack}></img>
+            <a>Dark Mode</a>
+        </a>
     </div>;
 }
 
