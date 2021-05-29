@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import searchBlack from './assets/icon-search-black.svg'
+import arrowDown from './assets/down-arrow-black.svg'
 
 const Searchbar = (props) => {
 
@@ -27,7 +27,7 @@ const Searchbar = (props) => {
             onChange={(e) => setSearch(e.target.value)}
             ></input>
             </form>
-            <a href='#' onClick={() => setOpen(!open)}>Filter by Region</a>
+            <a href='#' onClick={() => setOpen(!open)}>Filter by Region  </a>
         </div>
             {open && props.children}
         

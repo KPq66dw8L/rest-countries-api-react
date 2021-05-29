@@ -86,9 +86,19 @@ body, html {
     margin-bottom: auto;
     text-decoration: none;
     color: black;
-    background-color: white;
+    /* background-color: white; */
     padding: 1.5rem;
+    padding-right: 3rem;
     border-radius: 5px;
+    background: url(../assets/down-arrow-black.svg) white no-repeat 150px 26px;
+    background-size: 16px;
+    
+}
+
+.flexSearch a img {
+    width: 10%;
+    margin-left: 1rem;
+    
 }
 
 .dropdown {
