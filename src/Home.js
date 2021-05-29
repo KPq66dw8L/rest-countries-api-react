@@ -12,6 +12,7 @@ const Home = () => {
         const response = await fetch(url);
         const countries = await response.json();
         setCountries(countries);
+        
     };
     useEffect(() => {
         getCountries();
@@ -20,7 +21,9 @@ const Home = () => {
     return <div>
         <Searchbar></Searchbar>
         <div className='cards'>
-          <Card></Card>
+          {countries.map((country, index)=>{
+              return <Card key={index} id={index} country={country}></Card> 
+          })} 
         </div>
     </div>;
 }
