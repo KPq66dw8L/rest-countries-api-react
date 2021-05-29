@@ -1,5 +1,5 @@
 const Searchbar = () => {
-    return <div>
+    return <div className='searchbar'>
         <input type='text'></input>
     </div>;
 }

@@ -1,0 +1,62 @@
+/* FONT definition */
+@font-face {
+    font-family: Nunito-Sans;
+    src: url("../fonts/NunitoSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Nunito-Sans;
+    src: url("../fonts/NunitoSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Nunito-Sans;
+    src: url("../fonts/NunitoSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: bold;
+  }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito-Sans';
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.home {
+    padding: 8rem 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 1fr;
+    gap: 5rem;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+}
+
+.card img {
+    width: 100%;
+}

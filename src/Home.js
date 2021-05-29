@@ -18,7 +18,7 @@ const Home = () => {
         getCountries();
     }, []);
 
-    return <div>
+    return <div className='home'>
         <Searchbar></Searchbar>
         <div className='cards'>
           {countries.map((country, index)=>{
