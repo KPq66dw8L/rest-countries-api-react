@@ -1,14 +1,36 @@
 import React, { useState } from 'react';
 
+import searchBlack from './assets/icon-search-black.svg'
+
 const Searchbar = (props) => {
 
     const [open, setOpen] = useState(false);
 
-    return <div className='searchbar'>
-        <input type='text'></input>
-        <a href='#' onClick={() => setOpen(!open)}>Filter by Region</a>
+    const [search, setSearch] = useState('');
+    const handleSubmit = (e) => {
+        if(search){
+            console.log(search);
+        }
+    }
 
-        {open && props.children}
+    return <div className='searchbar'>
+        <div className='flexSearch'>
+            <form onSubmit={handleSubmit}>
+            {/* <img src={searchBlack}></img> */}
+            <input 
+            type='text'
+            placeholder='Search for a country...'
+            autoComplete='off'
+            id='search'
+            name='search'
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            ></input>
+            </form>
+            <a href='#' onClick={() => setOpen(!open)}>Filter by Region</a>
+        </div>
+            {open && props.children}
+        
     </div>;
 }
 
