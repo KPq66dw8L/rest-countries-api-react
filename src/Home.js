@@ -8,11 +8,13 @@ const url = 'https://restcountries.eu/rest/v2/all';
 const Home = () => {
     const [countries, setCountries] = useState([]);
 
+    
+
     const getCountries = async() => {
         const response = await fetch(url);
         const countries = await response.json();
         setCountries(countries);
-        
+        console.log(countries)
     };
     useEffect(() => {
         getCountries();
@@ -20,7 +22,7 @@ const Home = () => {
 
     return <div className='home'>
         <Searchbar>
-            <DropdownMenu></DropdownMenu>
+            <DropdownMenu ></DropdownMenu>
         </Searchbar>
         <div className='cards'>
           {countries.map((country, index)=>{
@@ -28,9 +30,11 @@ const Home = () => {
           })} 
         </div>
     </div>;
-}
+};
 
 const DropdownMenu = () => {
+
+    const [region, setRegion] = useState('');
 
     const DropdownItem = (props) => {
         return (
@@ -42,9 +46,13 @@ const DropdownMenu = () => {
 
     return (
         <div className='dropdown'>
-            <DropdownItem>Europe</DropdownItem>
+            <DropdownItem onClick={() => setRegion('africa') } >Africa</DropdownItem>
+            <DropdownItem onClick={() => setRegion('america')}>America</DropdownItem>
+            <DropdownItem onClick={() => setRegion('asia')} >Asia</DropdownItem>
+            <DropdownItem onClick={() => setRegion('europe')} >Europe</DropdownItem>
+            <DropdownItem onClick={() => setRegion('oceania')} >Oceania</DropdownItem>
         </div>
     );
-}
+};
 
 export default Home;

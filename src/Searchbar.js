@@ -16,7 +16,6 @@ const Searchbar = (props) => {
     return <div className='searchbar'>
         <div className='flexSearch'>
             <form onSubmit={handleSubmit}>
-            {/* <img src={searchBlack}></img> */}
             <input 
             type='text'
             placeholder='Search for a country...'

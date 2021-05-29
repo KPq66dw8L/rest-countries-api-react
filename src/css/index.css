@@ -46,10 +46,17 @@ body, html {
     width: 1rem;
 }
 
+.home {
+    padding: 3rem 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hsl(0, 0%, 98%);
+}
+
 .searchbar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 100px;
+    grid-template-rows: 100px 170px;
 }
 
 .flexSearch {
@@ -72,13 +79,14 @@ body, html {
 .flexSearch input {
     padding: 1.5rem;
     padding-left: 5rem;
-    width: 27rem;
+    width: 23vw;
     border: none;
     outline: none;
     font-family: 'Nunito-Sans';
     font-weight: 600;
     border-radius: 5px;
     background: url(../assets/icon-search-black.svg) no-repeat white 25px 20px ;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .flexSearch a {
@@ -86,24 +94,26 @@ body, html {
     margin-bottom: auto;
     text-decoration: none;
     color: black;
-    /* background-color: white; */
     padding: 1.5rem;
     padding-right: 3rem;
     border-radius: 5px;
-    background: url(../assets/down-arrow-black.svg) white no-repeat 150px 26px;
-    background-size: 16px;
-    
-}
-
-.flexSearch a img {
-    width: 10%;
-    margin-left: 1rem;
-    
+    background: url(../assets/down-arrow-black.svg) white no-repeat 155px 30px;
+    background-size: 10px;
+    width: 120px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .dropdown {
-    margin-left: auto;
+    width: 175px;
+    border-radius: 5px;
     grid-column-start: 2;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding: 1rem 0 1rem 1rem;
+    z-index: 2;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .dropdown a {
@@ -111,11 +121,9 @@ body, html {
     color: black;
 }
 
-.home {
-    padding: 8rem 15rem;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: hsl(0, 0%, 98%);
+.menu-item {
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 .cards {
@@ -123,15 +131,28 @@ body, html {
     grid-template-columns: repeat(4, 1fr);
     width: 1fr;
     gap: 5rem;
+    margin-top: -8rem;
 }
 
 .card {
     width: 100%;
     background-color: white;
     border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* display: grid;
+    grid-template-rows: 300px 200px;
+    grid-template-columns: 1fr; */
 }
 
 .card img {
     width: 100%;
     border-radius: 5px 5px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    /* grid-row-start: 1; */
+}
+
+.subCard {
+    padding: 0 2rem;
+    bottom: 0;
+    /* grid-row-start: 2; */
 }
