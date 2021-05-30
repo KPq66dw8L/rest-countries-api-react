@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
 const Searchbar = (props) => {
-    let urlPartial = 'all';
-
-    props.setUrl('https://restcountries.eu/rest/v2/' + urlPartial);
 
     const [open, setOpen] = useState(false);
 
@@ -13,8 +10,9 @@ const Searchbar = (props) => {
         if(search){
             console.log(search);
             props.setUrl('https://restcountries.eu/rest/v2/name/' + search);
+        } else {
+            props.setUrl('https://restcountries.eu/rest/v2/all');
         }
-        
     }
 
     return <div className='searchbar'>

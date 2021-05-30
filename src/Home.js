@@ -10,7 +10,7 @@ const Home = () => {
     const [url, setUrl] = useState('https://restcountries.eu/rest/v2/all');
     const [region, setRegion] = useState('');
 
-    const { loading, countries } = useFetch(url); //custom hook
+    const { isLoading, countries, isError } = useFetch(url); //custom hook
 
     return <div className='home'>
         <Searchbar setUrl={setUrl}>
@@ -27,7 +27,6 @@ const Home = () => {
 const DropdownMenu = ({setRegion}) => {
 
     const DropdownItem = (props) => {
-
         return (
             <a href='#' className='menu-item'>
                 {props.children}
