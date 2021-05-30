@@ -12,7 +12,8 @@ const Home = () => {
 
     const { isLoading, countries, isError } = useFetch(url); //custom hook
 
-    return <div className='home'>
+    if(!isLoading && !isError){
+        return <div className='home'>
         <Searchbar setUrl={setUrl}>
             <DropdownMenu setRegion={setRegion}></DropdownMenu>
         </Searchbar>
@@ -22,6 +23,25 @@ const Home = () => {
           })} 
         </div>
     </div>;
+    } if (isLoading && !isError){
+        return <div className='home'>
+        <Searchbar setUrl={setUrl}>
+            <DropdownMenu setRegion={setRegion}></DropdownMenu>
+        </Searchbar>
+        <div>
+          <h1>Loading...</h1>
+        </div>
+    </div>;
+    } if (!isLoading && isError){
+        return <div className='home'>
+        <Searchbar setUrl={setUrl}>
+            <DropdownMenu setRegion={setRegion}></DropdownMenu>
+        </Searchbar>
+        <div>
+          <h1>No results found. Try again...</h1>
+        </div>
+    </div>;
+    }
 };
 
 const DropdownMenu = ({setRegion}) => {
