@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 
-const Card = (props) => {
-    const {flag, name, population, subregion, capital} = props.country;
+const Card = ({country}) => {
+    const {flag, name, population, subregion, capital} = country;
 
     const new_population = population.toLocaleString();
 
-    return <Link to={`/details/${name}`} key={props.id} className='card'>
+    const newTo = {
+        pathname: `/details/${name}`,
+        country: country
+    };
+
+    return <Link to={newTo} className='card'>
 
         <img src={flag} alt={name}></img>
         <div className='subCard'>

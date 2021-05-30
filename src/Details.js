@@ -1,6 +1,10 @@
+import { useParams, useLocation } from 'react-router-dom';
+
 const Details = () => {
+    const { country } = useLocation();
+    console.log(country);
     return <div>
-        <h1>Hello World</h1>
+        <h1>hello</h1>
     </div>;
 }
 
