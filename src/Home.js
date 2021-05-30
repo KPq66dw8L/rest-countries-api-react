@@ -27,7 +27,7 @@ const Home = () => {
         </Searchbar>
         <div className='cards'>
           {countries.map((country, index)=>{
-              return <Card key={index} id={index} country={country}></Card> 
+              return <Card key={index} id={index} country={country} ></Card> 
           })} 
         </div>
     </div>;

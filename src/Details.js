@@ -1,7 +1,7 @@
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, Link } from 'react-router-dom';
 
 const Details = () => {
-    const { country } = useLocation();
+    const { country} = useLocation();
     const { 
         flag, 
         name, 
@@ -16,7 +16,7 @@ const Details = () => {
         borders } = country; //arrays: currencies, languages, borders, topLevelDomain
 
     return <div className='details'>
-        <a href='#'>Back</a>
+        <Link to={`/`} >Back</Link>
         <img src={flag} alt={name}></img>
         
             
