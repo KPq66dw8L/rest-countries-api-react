@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useFetch } from './useFetch'
 
 import Card from './Card';
 import Searchbar from './Searchbar';
 
-const url = 'https://restcountries.eu/rest/v2/all';
+
 
 const Home = () => {
-    const [countries, setCountries] = useState([]);
-
+    const [url, setUrl] = useState('https://restcountries.eu/rest/v2/all');
     const [region, setRegion] = useState('');
 
-    const getCountries = async() => {
-        const response = await fetch(url);
-        const countries = await response.json();
-        setCountries(countries);
-        console.log(countries)
-    };
-    useEffect(() => {
-        getCountries();
-    }, []);
+    const { loading, countries } = useFetch(url); //custom hook
 
     return <div className='home'>
-        <Searchbar>
+        <Searchbar setUrl={setUrl}>
             <DropdownMenu setRegion={setRegion}></DropdownMenu>
         </Searchbar>
         <div className='cards'>

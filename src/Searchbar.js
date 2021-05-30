@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 
-import arrowDown from './assets/down-arrow-black.svg'
-
 const Searchbar = (props) => {
+    let urlPartial = 'all';
+
+    props.setUrl('https://restcountries.eu/rest/v2/' + urlPartial);
 
     const [open, setOpen] = useState(false);
 
     const [search, setSearch] = useState('');
     const handleSubmit = (e) => {
+        e.preventDefault();
         if(search){
             console.log(search);
+            props.setUrl('https://restcountries.eu/rest/v2/name/' + search);
         }
+        
     }
 
     return <div className='searchbar'>
