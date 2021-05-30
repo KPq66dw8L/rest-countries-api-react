@@ -4,11 +4,18 @@ import { useFetch } from './useFetch'
 import Card from './Card';
 import Searchbar from './Searchbar';
 
-
-
 const Home = () => {
     const [url, setUrl] = useState('https://restcountries.eu/rest/v2/all');
     const [region, setRegion] = useState('');
+
+    useEffect(() => {
+        console.log(region);
+        if(region){
+            setUrl('https://restcountries.eu/rest/v2/region/'+region);
+        } else {
+            setUrl('https://restcountries.eu/rest/v2/all');
+        }
+    },[region]);
 
     const { isLoading, countries, isError } = useFetch(url); //custom hook
 
@@ -16,6 +23,7 @@ const Home = () => {
         return <div className='home'>
         <Searchbar setUrl={setUrl}>
             <DropdownMenu setRegion={setRegion}></DropdownMenu>
+            
         </Searchbar>
         <div className='cards'>
           {countries.map((country, index)=>{
@@ -23,7 +31,7 @@ const Home = () => {
           })} 
         </div>
     </div>;
-    } if (isLoading && !isError){
+    } if (isLoading && !isError){ //apparently not functionnal, but does not create errors
         return <div className='home'>
         <Searchbar setUrl={setUrl}>
             <DropdownMenu setRegion={setRegion}></DropdownMenu>
@@ -48,7 +56,7 @@ const DropdownMenu = ({setRegion}) => {
 
     const DropdownItem = (props) => {
         return (
-            <a href='#' className='menu-item'>
+            <a href='#' className='menu-item' onClick={() => props.setRegion(props.children)}>
                 {props.children}
             </a>
         );
@@ -56,11 +64,11 @@ const DropdownMenu = ({setRegion}) => {
 
     return (
         <div className='dropdown'>
-            <DropdownItem onClick={() => setRegion('africa')} >Africa</DropdownItem>
-            <DropdownItem onClick={() => setRegion('america')}>America</DropdownItem>
-            <DropdownItem onClick={() => setRegion('asia')} >Asia</DropdownItem>
-            <DropdownItem onClick={() => setRegion('europe')} >Europe</DropdownItem>
-            <DropdownItem onClick={() => setRegion('oceania')} >Oceania</DropdownItem>
+            <DropdownItem setRegion={setRegion} >Africa</DropdownItem>
+            <DropdownItem setRegion={setRegion} >America</DropdownItem>
+            <DropdownItem setRegion={setRegion} >Asia</DropdownItem>
+            <DropdownItem setRegion={setRegion} >Europe</DropdownItem>
+            <DropdownItem setRegion={setRegion} >Oceania</DropdownItem>
         </div>
     );
 };

@@ -6,7 +6,7 @@ export const useFetch = (url) => {
   const [isError, setIsError] = useState(false);
 
   const getCountries = useCallback(async () => {
-      setIsError(false);
+    setIsError(false);
     const response = await fetch(url);
     if (response.status >= 200 && response.status <= 299){
         const countries = await response.json();
@@ -21,7 +21,7 @@ export const useFetch = (url) => {
     // const countries = await response.json();
     // setCountries(countries);
     // setIsLoading(false);
-  }, [url]);
+  },[url]);
 
   useEffect(() => {
     getCountries();
