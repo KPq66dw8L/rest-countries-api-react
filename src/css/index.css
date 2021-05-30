@@ -142,6 +142,8 @@ body, html {
     /* display: grid;
     grid-template-rows: 300px 200px;
     grid-template-columns: 1fr; */
+    text-decoration: none;
+    color: black;
 }
 
 .card img {

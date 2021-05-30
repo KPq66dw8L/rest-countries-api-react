@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         console.log(region);
         if(region){
-            setUrl('https://restcountries.eu/rest/v2/region/'+region);
+            setUrl('https://restcountries.eu/rest/v2/region/'+ region);
         } else {
             setUrl('https://restcountries.eu/rest/v2/all');
         }

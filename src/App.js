@@ -19,7 +19,7 @@ function App() {
       <Route path='/details/:id' children={<Details/>}></Route>
       <Route path='*'>
         <Error></Error>
-      </Route>
+      </Route>  
     </Switch>
   </Router>);
 }
