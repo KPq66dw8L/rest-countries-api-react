@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, HashRouter } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './Navbar';
 //page(s)
@@ -7,10 +6,8 @@ import Home from './Home'
 import Error from './Error'
 import Details from './Details'
 
-
-
 function App() {
-  return (<HashRouter>
+  return (
     <Router>
     <Navbar></Navbar>
     <Switch>
@@ -23,7 +20,7 @@ function App() {
       </Route>  
     </Switch>
   </Router>
-  </HashRouter>);
+  );
 }
 
 export default App;

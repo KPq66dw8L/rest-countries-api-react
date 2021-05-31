@@ -7,7 +7,7 @@ const Card = ({country}) => {
 
     const newTo = {
         pathname: `/details/${name}`,
-        country: country
+        state: {country: country}
     };
 
     return <Link to={newTo} className='card'>

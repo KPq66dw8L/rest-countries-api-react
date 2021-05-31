@@ -1,8 +1,8 @@
-import { useLocation, Link, HashRouter  } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const Details = () => {
-    const { country } = useLocation();
-    
+    const { state } = useLocation();
+    const country = state.country;
     const { 
         flag, 
         name, 
@@ -14,7 +14,8 @@ const Details = () => {
         topLevelDomain, 
         currencies, 
         languages, 
-        borders } = country; //arrays: currencies, languages, borders, topLevelDomain
+        borders } = country; 
+        //arrays: currencies, languages, borders, topLevelDomain
 
     return <div className='details'>
         <Link to={`/`} >Back</Link>
