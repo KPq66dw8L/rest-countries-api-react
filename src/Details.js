@@ -1,7 +1,8 @@
-import { useParams, useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, HashRouter  } from 'react-router-dom';
 
 const Details = () => {
-    const { country} = useLocation();
+    const { country } = useLocation();
+    
     const { 
         flag, 
         name, 
@@ -33,14 +34,12 @@ const Details = () => {
                 <span>Top Level Domain:ㅤ<p>{topLevelDomain}</p></span>
                 <span>Currencies: 
                 {currencies.map((currencie, index) =>{
-                    console.log(currencie.name);
                     return (<p key={index}>ㅤ{currencie.name}</p>);
                 })}
                 </span>
                 
                 <span>Languages: 
                 {languages.map((language, index) =>{
-                    console.log(language.name);
                     return (<p key={index}>ㅤ{language.name}</p>);
                 })}
                 </span>
@@ -49,7 +48,6 @@ const Details = () => {
         <div className='borders'>
             <span>Border Countries: 
             {borders.map((border, index) =>{
-                console.log(border.name);
                 return (<p key={index}>ㅤ{border}</p>);
             })}
             </span>

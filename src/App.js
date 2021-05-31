@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, HashRouter } from 'react-router-dom';
 
 
 import Navbar from './Navbar';
@@ -10,18 +10,20 @@ import Details from './Details'
 
 
 function App() {
-  return (<Router>
+  return (<HashRouter>
+    <Router>
     <Navbar></Navbar>
     <Switch>
       <Route exact path='/'>
         <Home />
       </Route>
-      <Route path='/details/:id' children={<Details/>}></Route>
+      <Route path='#/details/:id' children={<Details/>}></Route>
       <Route path='*'>
         <Error></Error>
       </Route>  
     </Switch>
-  </Router>);
+  </Router>
+  </HashRouter>);
 }
 
 export default App;
