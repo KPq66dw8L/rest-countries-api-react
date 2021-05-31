@@ -59,6 +59,7 @@ const Details = () => {
             
         </div>;
     } else {
+        //to access the country by the url (without coming from the homepage)
         let splitUrl = (window.location.href).split('/');
         let lastPartUrlIndex = splitUrl.length - 1;
         const pays = splitUrl[lastPartUrlIndex];
