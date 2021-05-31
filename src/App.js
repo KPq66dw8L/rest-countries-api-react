@@ -17,7 +17,7 @@ function App() {
       <Route exact path='/'>
         <Home />
       </Route>
-      <Route path='#/details/:id' children={<Details/>}></Route>
+      <Route path='/details/:id' children={<Details/>}></Route>
       <Route path='*'>
         <Error></Error>
       </Route>  
