@@ -8,9 +8,9 @@ import './css/index.css'
 
 
 ReactDOM.render(
-  <React.Fragment>
+  
     <App />
-  </React.Fragment>,
+  ,
   document.getElementById('root')
 );
 

@@ -21,11 +21,11 @@ export const useFetch = (url) => {
     // const countries = await response.json();
     // setCountries(countries);
     // setIsLoading(false);
-  },[url]);
+  },[url, countries]);
 
   useEffect(() => {
     getCountries();
-  }, [url, getCountries]);
+  }, [url]);
     return { isLoading, countries, isError };
 
 };
