@@ -2,13 +2,18 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './Navbar';
 //page(s)
-import Home from './Home'
-import Error from './Error'
-import Details from './Details'
+import Home from './Home';
+import Error from './Error';
+import Details from './Details';
+//CSS
+import './css/App.css';
+
+import DarkMode from './DarkMode';
 
 function App() {
   return (
     <Router>
+      
     <Navbar></Navbar>
     <Switch>
       <Route exact path='/'>

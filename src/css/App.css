@@ -1,30 +1,54 @@
+:root {
+    --blue: hsl(207, 26%, 17%);
+    --white: rgb(236, 236, 236);
+}
+
 /* FONT definition */
 @font-face {
     font-family: Nunito-Sans;
     src: url("../fonts/NunitoSans-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: Nunito-Sans;
     src: url("../fonts/NunitoSans-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: Nunito-Sans;
     src: url("../fonts/NunitoSans-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: bold;
-  }
+}
 
-body, html {
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body.light {
     margin: 0;
     padding: 0;
     font-family: 'Nunito-Sans';
+    transition: 0.3s ease-in-out, color 0.6s ease-in-out;
     background-color: hsl(0, 0%, 98%);
+}
+
+body.dark {
+    background-color: hsl(207, 26%, 17%);
+    margin: 0;
+    padding: 0;
+    transition: 0.3s ease-in-out, color 0.6s ease-in-out;
+    font-family: 'Nunito-Sans';
+    color: hsl(0, 0%, 98%);
+}
+
+p.black {
+    color: hsl(0, 0%, 98%);
 }
 
 .navbar {
@@ -34,7 +58,6 @@ body, html {
     padding: 1rem 5rem;
     height: 80px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color: white;
     transition: 0.3s;
 }
 
@@ -46,9 +69,12 @@ body, html {
 .navbar a {
     margin-left: 10px;
     text-decoration: none;
-    color: black;
     font-weight: 600;
     font-size: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
 }
 
 .navbar img {
@@ -59,7 +85,11 @@ body, html {
     padding: 3rem 10vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: hsl(0, 0%, 98%);
+    
+}
+
+.home.dark {
+    background-color: hsl(209, 23%, 22%);
 }
 
 .searchbar {
@@ -90,7 +120,7 @@ body, html {
     font-family: 'Nunito-Sans';
     font-weight: 600;
     border-radius: 5px;
-    background: url(../assets/icon-search-black.svg) no-repeat white 25px 20px ;
+    background: url(../assets/icon-search-black.svg) no-repeat 25px 20px ;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -98,11 +128,10 @@ body, html {
     margin-top: auto;
     margin-bottom: auto;
     text-decoration: none;
-    color: black;
     padding: 1.5rem;
     padding-right: 3rem;
     border-radius: 5px;
-    background: url(../assets/down-arrow-black.svg) white no-repeat 155px 30px;
+    background: url(../assets/down-arrow-black.svg) no-repeat 155px 30px;
     background-size: 10px;
     width: 120px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -121,9 +150,12 @@ body, html {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.dropdown.black {
+    background: hsl(207, 26%, 17%);
+}
+
 .dropdown a {
     text-decoration: none;
-    color: black;
 }
 
 .menu-item {
@@ -141,14 +173,11 @@ body, html {
 
 .card {
     width: 100%;
-    background-color: white;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     text-decoration: none;
-    color: black;
     transition: 0.2s;
 }
-
 .card:hover {
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     transition: 0.2s;
@@ -163,6 +192,13 @@ body, html {
 .subCard {
     padding: 0 2rem;
     bottom: 0;
+    color: black;
+    transition: 0.3s ease-in-out, color 0.6s ease-in-out;
+}
+
+.subCard.dark {
+    color: hsl(0, 0%, 98%);
+    transition: 0.3s ease-in-out, color 0.6s ease-in-out;
 }
 
 /* Details page */
@@ -184,7 +220,7 @@ body, html {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     text-decoration: none;
     color: black;
-    background: url(../assets/left-arrow-black.svg) no-repeat white 18px 13px;
+    background: url(../assets/left-arrow-black.svg) no-repeat 18px 13px;
     background-size: 16px 16px;
     transition: 0.3s;
 }
