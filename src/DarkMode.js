@@ -11,7 +11,6 @@ const DarkMode = () => {
 
     // Get desired elements
     var element = document.body.getElementsByClassName('subCard');
-    
 
     // Iterate through the retrieved elements and add the necessary class names.
     // for(var i = 0; i < element.length; i++)
